@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+group 'com.yullg.server'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.springframework:spring-webmvc:6.0.4"
+}
