@@ -6,33 +6,33 @@ public class ResultException extends RuntimeException {
 	public final int code;
 
 	public ResultException() {
-		this(Result.CODE_NO, Result.MESSAGE_NO);
+		this(RestResult.CODE_NO, RestResult.MESSAGE_NO);
 	}
 
 	public ResultException(String message) {
-		this(Result.CODE_NO, message);
+		this(RestResult.CODE_NO, message);
 	}
 
 	public ResultException(int code, String message) {
 		super(message);
-		if (Result.CODE_OK == code) {
-			throw new IllegalArgumentException("The code must not be " + Result.CODE_OK);
+		if (RestResult.CODE_OK == code) {
+			throw new IllegalArgumentException("The code must not be " + RestResult.CODE_OK);
 		}
 		this.code = code;
 	}
 
 	public ResultException(Throwable cause) {
-		this(Result.CODE_NO, Result.MESSAGE_NO, cause);
+		this(RestResult.CODE_NO, RestResult.MESSAGE_NO, cause);
 	}
 
 	public ResultException(String message, Throwable cause) {
-		this(Result.CODE_NO, message, cause);
+		this(RestResult.CODE_NO, message, cause);
 	}
 
 	public ResultException(int code, String message, Throwable cause) {
 		super(message, cause);
-		if (Result.CODE_OK == code) {
-			throw new IllegalArgumentException("The code must not be " + Result.CODE_OK);
+		if (RestResult.CODE_OK == code) {
+			throw new IllegalArgumentException("The code must not be " + RestResult.CODE_OK);
 		}
 		this.code = code;
 	}

@@ -1,11 +1,11 @@
 package com.yullg.server.scaffold.web;
 
-public class ExceptionResult<T> extends Result<T> {
+public class ExceptionResult<T> extends RestResult<T> {
 
 	public ExceptionResult(int code, String message, T data) {
 		super(code, message, data);
-		if (Result.CODE_OK == code) {
-			throw new IllegalArgumentException("The code must not be " + Result.CODE_OK);
+		if (RestResult.CODE_OK == code) {
+			throw new IllegalArgumentException("The code must not be " + RestResult.CODE_OK);
 		}
 	}
 
@@ -14,7 +14,7 @@ public class ExceptionResult<T> extends Result<T> {
 	}
 
 	public ExceptionResult() {
-		this(Result.CODE_NO, Result.MESSAGE_NO);
+		this(RestResult.CODE_NO, RestResult.MESSAGE_NO);
 	}
 
 }
